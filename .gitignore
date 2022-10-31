@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+./energyplus9.5
+./__pycache__
+./virtualenv
+./EplusEngine
+
+
 # Distribution / packaging
 .Python
 build/
