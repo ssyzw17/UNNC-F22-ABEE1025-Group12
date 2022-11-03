@@ -31,19 +31,19 @@ def plot_1D_results(output_path, plot_column_name, y_axis_title, plot_title):
 			alpha = 0.7,
 			linewidth = 2,
 			label = i)
-datetime_ax_loc = mdates.HourLocator() #loc means lines codes
-datetime_ax_fmt = mdates.DateFormatter('%H:%H') #fmt means writes data in various format
-axs.xaxis.set_major_locator(datetime_ax_loc)
-axs.xaxis.set_major_formattter(datetime_ax_fmt)
-for tick in axs.xaxis.get_major_ticks():
-	tick.label.set_fontsize(fontsize*0.8)
-for tick in axs.yaxis.get_major_ticks():
-	tick.label.set_fontsize(fontsize*0.8)
-axs.tick_params('x', labelrotation = 45)
-axs.set_xlabel('Time(%s to %s)'% (data_st_date, date_ed_date),
+	datetime_ax_loc = mdates.HourLocator() #loc means lines codes
+	datetime_ax_fmt = mdates.DateFormatter('%H:%H') #fmt means writes data in various format
+	axs.xaxis.set_major_locator(datetime_ax_loc)
+	axs.xaxis.set_major_formattter(datetime_ax_fmt)
+	for tick in axs.xaxis.get_major_ticks():
+		tick.label.set_fontsize(fontsize*0.8)
+	for tick in axs.yaxis.get_major_ticks():
+		tick.label.set_fontsize(fontsize*0.8)
+	axs.tick_params('x', labelrotation = 45)
+	axs.set_xlabel('Time(%s to %s)'% (data_st_date, date_ed_date),
 				fontsize = fontsize)
-axs.set_ylabel('Indoor Air Temperature (C)',
+	axs.set_ylabel('Indoor Air Temperature (C)',
 				fontsize = fontsize)
-axs.legend(fontsize = fontsize)
-plt.savefig('simulation of indoor air temperature vs.SHGC.png')
-plt.show()
+	axs.legend(fontsize = fontsize)
+	plt.savefig('simulation of indoor air temperature vs.SHGC.png')
+	plt.show()
