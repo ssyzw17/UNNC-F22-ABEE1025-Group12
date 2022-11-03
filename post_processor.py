@@ -43,4 +43,5 @@ axs.set_xlabel('Time(%s to %s)'% (data_st_date, date_ed_date),
 axs.set_ylabel('Indoor Air Temperature (C)',
 				fontsize = fontsize)
 axs.legend(fontsize = fontsize)
+plt.savefig(simulation of indoor air temperature vs.SHGC)
 plt.show()
