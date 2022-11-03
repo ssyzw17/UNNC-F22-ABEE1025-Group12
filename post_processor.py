@@ -11,7 +11,7 @@ def eplus_to_datetime(date_str):
 	if date_str[-8:-6] != '24':
 		dt_obj = pd.to_datetime(date_str)
 	else:
-		date_str = date_str[0:-8] + '00' = date_str[-6:]
+		date_str = date_str[0:-8] + '00' + date_str[-6:]
 		dt_obj = pd.to_datetime(date_str) + dt.timedelta(days = 1)
 	return dt_obj
 
@@ -27,8 +27,10 @@ def plot_1D_results(output_path, plot_column_name, y_axis_title, plot_title):
 		date_ed_date = this_df.iloc[-1]['Date/Time']
 		date_list = this_df['Date/Time']
 		this_y = this_df[plot_column_name].values
-		axs.plot(date_list, this_y #split canvas drawing
-			alpha = 0.7,linewidth = 2,label = i)
+		axs.plot(date_list, this_y, #split canvas drawing
+			alpha = 0.7,
+			linewidth = 2,
+			label = i)
 datetime_ax_loc = mdates.HourLocator() #loc means lines codes
 datetime_ax_fmt = mdates.DateFormatter('%H:%H') #fmt means writes data in various format
 axs.xaxis.set_major_locator(datetime_ax_loc)
@@ -43,5 +45,5 @@ axs.set_xlabel('Time(%s to %s)'% (data_st_date, date_ed_date),
 axs.set_ylabel('Indoor Air Temperature (C)',
 				fontsize = fontsize)
 axs.legend(fontsize = fontsize)
-plt.savefig(simulation of indoor air temperature vs.SHGC)
+plt.savefig('simulation of indoor air temperature vs.SHGC.png')
 plt.show()
