@@ -8,7 +8,7 @@ import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 
 def eplus_to_datetime(date_str):
-	if date_str[-8:-6] != '24'
+	if date_str[-8:-6] != '24':
 		dt_obj = pd.to_datetime(date_str)
 	else:
 		date_str = date_str[0:-8] + '00' = date_str[-6:]
